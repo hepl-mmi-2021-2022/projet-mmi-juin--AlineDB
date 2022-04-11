@@ -50,6 +50,11 @@ https://www.flaticon.com/free-icons/cotton-swab" title="cotton swab icons">Cotto
 
 Planète:
 https://storyset.com/nature">Nature illustrations by Storyset
+<a href="https://storyset.com/people">People illustrations by Storyset</a>
+
+
+Fond:
+<a href="https://storyset.com/nature">Nature illustrations by Storyset</a>
 
 
 
