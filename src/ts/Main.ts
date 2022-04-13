@@ -82,7 +82,6 @@ export const main = {
         this.ctx.closePath();
         },
 
-
     addEventListeners() {
         window.addEventListener('resize', () => {
             this.update();
