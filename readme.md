@@ -32,10 +32,7 @@ Enjoy the game!
 # Source img
 
 Poubelles:
-https://www.flaticon.com/free-icons/glass-bin" title="glass-bin icons">Glass-bin icons created by Smashicons - Flaticon
-https://www.flaticon.com/free-icons/paper-bin" title="paper-bin icons">Paper-bin icons created by Smashicons - Flaticon
-https://www.flaticon.com/free-icons/sustainable" title="sustainable icons">Sustainable icons created by Smashicons - Flaticon
-https://www.flaticon.com/free-icons/dumpster" title="dumpster icons">Dumpster icons created by Smashicons - Flaticon
+Créées par moi-même sur Illustrator / Created for me in Illustrator
 
 Déchets:
 https://www.flaticon.com/free-icons/crush" title="crush icons">Crush icons created by Smashicons - Flaticon
@@ -48,13 +45,7 @@ https://www.flaticon.com/free-icons/egg-shell" title="egg shell icons">Egg shell
 https://www.flaticon.com/free-icons/yoghurt" title="yoghurt icons">Yoghurt icons created by Mehwish - Flaticon
 https://www.flaticon.com/free-icons/cotton-swab" title="cotton swab icons">Cotton swab icons created by Freepik - Flaticon
 
-Planète:
-https://storyset.com/nature">Nature illustrations by Storyset
-<a href="https://storyset.com/people">People illustrations by Storyset</a>
 
-
-Fond:
-<a href="https://storyset.com/nature">Nature illustrations by Storyset</a>
 
 
 
