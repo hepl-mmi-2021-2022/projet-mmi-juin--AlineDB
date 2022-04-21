@@ -12,6 +12,8 @@ Les plastiques et métaux vont dans la poubelle bleu. Les déchets dégradables 
 
 Bon jeu !
 
+ (Jouez ici !)[https://hepl-mmi-2021-2022.github.io/projet-mmi-juin--AlineDB/]
+
 
 
 Game developed as part of the Javascript course for the June 2022 exam. 
