@@ -16,6 +16,8 @@ Bon jeu !
 
 
 
+
+
 Game developed as part of the Javascript course for the June 2022 exam. 
 (Under development)
 
