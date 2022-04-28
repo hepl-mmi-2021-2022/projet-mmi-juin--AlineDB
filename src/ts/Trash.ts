@@ -1,13 +1,12 @@
 
-import {settings} from "./settings";
 import {main} from "./Main";
 
 
 export class Trash {
-    public poubellePapier: HTMLImageElement
-    public poubelleGris : HTMLImageElement
-    public poubelleVerre: HTMLImageElement
-    public poubellePlastique: HTMLImageElement
+    protected poubellePapier: HTMLImageElement
+    protected poubelleGris : HTMLImageElement
+    protected poubelleVerre: HTMLImageElement
+    protected poubellePlastique: HTMLImageElement
     private htmlCanvasElement: HTMLCanvasElement
     private ctx: CanvasRenderingContext2D
 
@@ -45,8 +44,6 @@ export class Trash {
         this.update();
     }
 
-
-
     update() {
         this.draw();
     }
@@ -62,7 +59,7 @@ export class Trash {
         //soleil
         this.ctx.beginPath();
         this.ctx.fillStyle = 'yellow' ;
-        this.ctx.arc(settings.nuage.radius*2, settings.nuage.radius*2, settings.nuage.radius, 0, 2 * Math.PI);
+        this.ctx.arc(100, 100, 50, 0, 2 * Math.PI);
         this.ctx.fill();
         this.ctx.closePath();
     }

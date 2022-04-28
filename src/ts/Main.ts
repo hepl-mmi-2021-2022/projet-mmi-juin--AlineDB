@@ -1,13 +1,12 @@
 
-import {settings} from "./settings";
 import {Trash} from "./Trash";
+import {Dechets} from "./Dechets";
 
 export const main = {
     htmlCanvasElement: HTMLCanvasElement,
     ctx: CanvasRenderingContext2D,
     trash: Trash,
-    fond: HTMLImageElement,
-
+    dechets: Dechets,
 
     init() {
         this.htmlCanvasElement = document.getElementById('my-canvas');
