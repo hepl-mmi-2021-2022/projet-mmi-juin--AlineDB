@@ -54,14 +54,18 @@ table {
 }
 
 @font-face {
-  font-family: "Gochi";
-  src: url("https://fonts.googleapis.com/css2?family=Gochi+Hand");
+  font-family: "Gochi Hand";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/gochihand/v16/hES06XlsOjtJsgCkx1Pkfon_-w.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 body {
   background-image: url(../images/fond.png?ff6865e3478b885d627fb065a1c1b2e5);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  font-family: "Gochi Hand", sans-serif;
 }
 
 html {
@@ -74,12 +78,15 @@ html {
   align-items: center;
 }
 
+.info p {
+  font-size: 1.5em;
+}
+
 h1 {
-  font-size: 2em;
-  font-family: "Gochi";
+  font-size: 3em;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 2em;
   text-align: center;
 }
