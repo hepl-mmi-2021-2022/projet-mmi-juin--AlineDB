@@ -1,9 +1,11 @@
 import {Dechets} from "./Dechets";
 import {settings} from "./settings";
+import {Trashes} from "./Trashes";
 
 
 export class Animate {
     private dechets: Dechets;
+    private trash: Trashes;
     private readonly ctx: CanvasRenderingContext2D;
     private readonly canvas: HTMLCanvasElement;
 
@@ -16,16 +18,21 @@ export class Animate {
 
     draw(){
         this.dechets = new Dechets(this.canvas, this.ctx);
-    }
-    update(){
-        this.dechets.update();
+        this.trash = new Trashes(this.canvas, this.ctx);
 
+    }
+    update() {
+        this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+        this.dechets.update();
     }
 
     start(){
-        requestAnimationFrame(() => {
+        this.update();
 
-            this.update();
+        requestAnimationFrame(() => {
+            this.start();
+            //
+
 
 
         })

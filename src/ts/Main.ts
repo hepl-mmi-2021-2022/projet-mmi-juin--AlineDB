@@ -6,18 +6,14 @@ import {Animate} from "./Animate";
 export const main = {
     htmlCanvasElement: HTMLCanvasElement,
     ctx: CanvasRenderingContext2D,
-    trash: Trashes,
     animation : Animate,
     dechets: Dechets,
+    trash: Trashes,
 
     init() {
-        //dechets
-        this.dechets = [];
         this.htmlCanvasElement = document.getElementById('my-canvas');
         this.ctx = this.htmlCanvasElement.getContext('2d');
 
-        //poubelles
-        this.trash = new Trashes(this.htmlCanvasElement, this.ctx);
 
         this.animation = new Animate(this.ctx, this.htmlCanvasElement, this.dechets);
         this.addEventListeners();
@@ -31,6 +27,7 @@ export const main = {
     },
 
     draw(){
+        this.dechets = new Dechets(this.canvas, this.ctx);
         this.trash.draw();
         },
 
