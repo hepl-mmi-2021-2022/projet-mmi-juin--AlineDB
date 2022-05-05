@@ -7,9 +7,10 @@ export class Dechets {
     private htmlCanvasElement: HTMLCanvasElement;
     private ctx: CanvasRenderingContext2D;
 
-    protected speed:{ x: number};
-    protected position: {x:number, y:number};
+    protected speed:{ y: number};
+    position: {x:number, y:number};
     Alive: boolean;
+
 
     protected banane: HTMLImageElement;
     protected bouteille: HTMLImageElement;
@@ -22,13 +23,15 @@ export class Dechets {
     protected sheet: HTMLImageElement;
     protected apple:HTMLImageElement;
 
+
     constructor(htmlCanvasElement: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
         this.htmlCanvasElement = htmlCanvasElement;
         this.ctx = ctx;
 
-        this.speed = {x: settings.dechet.speed.x};
-        this.position = {x: Math.trunc(random(settings.dechet.position.x, this.htmlCanvasElement.width)), y: 0};
+        this.speed = {y: settings.dechet.speed.y};
+        this.position = {x: Math.trunc(random(settings.dechet.position.x, this.htmlCanvasElement.width)), y: settings.dechet.position.y};
         this.Alive = true;
+
 
         //banane
         this.banane = new Image();
@@ -95,28 +98,58 @@ export class Dechets {
     }
 
     update(){
-       if (this.position.x < this.htmlCanvasElement.height - 100){
-            this.position.x += this.speed.x;
-        }
         this.draw();
+        /*if (this.position.y < this.htmlCanvasElement.height-100){
+            this.position.y ++;
+        } else if (this.position.y > this.htmlCanvasElement.height - 100){
+            this.position.y = 0;
+
+        }*/
+
+        /*switch (this.position.y < this.htmlCanvasElement.height-100){
+            case this.position.y < this.htmlCanvasElement.height-100: this.position.y ++;
+            break;
+
+            default: this.position.y = 0;
+        }*/
+        /*
+        for (let i = 0; i < this.htmlCanvasElement.height; i++) {
+            this.position.y = i/10;
+        }*/
+
+        console.log(this.position)
+        console.log(this.htmlCanvasElement.height)
     }
 
-    draw(){
-        if(Math.random()<0.1){
-            this.ctx.drawImage(this.apple, this.position.x, this.position.y , 100,100);
-        } else if(Math.random()<0.2){
-            this.ctx.drawImage(this.box, this.position.x, this.position.y, 100,100);
-        }else if(Math.random()<0.3){
-            this.ctx.drawImage(this.yogurt, this.position.x, this.position.y, 100, 100);
-        }else if(Math.random()<0.4){
-            this.ctx.drawImage(this.canette, this.position.x, this.position.y, 100,100);
-        }else if(Math.random()<0.5){
-            this.ctx.drawImage(this.sheet, this.position.x, this.position.y, 100,100);
-        }else if(Math.random()<0.6){
-            this.ctx.drawImage(this.cotton, this.position.x, this.position.y, 100,100);
-        }else if(Math.random()<0.7){
-            this.ctx.drawImage(this.oeuf, this.position.x, this.position.y, 100,100);
-        }
+    draw() {
+        switch (Math.trunc(Math.random()*10)) {
+            case 0 : this.ctx.drawImage(this.apple, this.position.x, this.position.y, 100, 100);
+            break;
 
+            case 1:  this.ctx.drawImage(this.box, this.position.x, this.position.y, 100, 100);
+            break;
+
+            case 2: this.ctx.drawImage(this.yogurt, this.position.x, this.position.y, 100, 100);
+            break;
+
+            case 3: this.ctx.drawImage(this.canette, this.position.x, this.position.y, 100, 100);
+            break;
+
+            case 4: this.ctx.drawImage(this.sheet, this.position.x, this.position.y, 100, 100);
+            break;
+
+            case 5: this.ctx.drawImage(this.cotton, this.position.x, this.position.y, 100, 100);
+            break;
+
+            case 6: this.ctx.drawImage(this.oeuf, this.position.x, this.position.y, 100, 100);
+            break;
+
+            case 7: this.ctx.drawImage(this.apple, this.position.x, this.position.y, 100, 100);
+            break;
+
+            case 8 : this.ctx.drawImage(this.box, this.position.x, this.position.y, 100, 100);
+            break;
+        }
     }
 }
+

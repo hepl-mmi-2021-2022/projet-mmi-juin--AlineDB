@@ -1,4 +1,5 @@
 import {Dechets} from "./Dechets";
+import {settings} from "./settings";
 
 
 export class Animate {
@@ -10,13 +11,23 @@ export class Animate {
         this.ctx = ctx;
         this.canvas = canvas;
         this.dechets = dechets;
+        this.draw();
+    }
+
+    draw(){
+        this.dechets = new Dechets(this.canvas, this.ctx);
+    }
+    update(){
+        this.dechets.update();
+
     }
 
     start(){
-
         requestAnimationFrame(() => {
-            this.start();
-            //this.dechets.update();
+
+            this.update();
+
+
         })
     }
 

@@ -2,7 +2,7 @@
 import {main} from "./Main";
 
 
-export class Trash {
+export class Trashes {
     protected poubellePapier: HTMLImageElement
     protected poubelleGris : HTMLImageElement
     protected poubelleVerre: HTMLImageElement
