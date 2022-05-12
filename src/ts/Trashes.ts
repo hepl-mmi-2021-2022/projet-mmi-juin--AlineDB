@@ -51,10 +51,10 @@ export class Trashes {
     draw(){
 
         //dessine les poubelles
-        this.ctx.drawImage(this.poubelleGris, window.innerWidth  /6 , window.innerHeight-250 , 200,200);
-        this.ctx.drawImage(this.poubellePapier, (window.innerWidth  /6) + this.poubellePapier.width*2 , window.innerHeight-250, 200,200);
-        this.ctx.drawImage(this.poubellePlastique, (window.innerWidth /6) + this.poubellePapier.width*4 , window.innerHeight-250, 200, 200);
-        this.ctx.drawImage(this.poubelleVerre, (window.innerWidth/6) + this.poubellePapier.width*6, window.innerHeight -250, 200,200);
+        this.ctx.drawImage(this.poubelleGris, window.innerWidth  /12 , window.innerHeight-250 , 180,180);
+        this.ctx.drawImage(this.poubellePapier, (window.innerWidth  /12) + this.poubellePapier.width*2 , window.innerHeight-250, 180,180);
+        this.ctx.drawImage(this.poubellePlastique, (window.innerWidth /12) + this.poubellePapier.width*4 , window.innerHeight-250, 180,180);
+        this.ctx.drawImage(this.poubelleVerre, (window.innerWidth/12) + this.poubellePapier.width*6, window.innerHeight -250, 180,180);
 
         //soleil
         this.ctx.beginPath();
@@ -69,4 +69,5 @@ export class Trashes {
             this.update();
         });
     }
+
 }

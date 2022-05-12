@@ -22,7 +22,8 @@ export class Animate {
 
     }
     update() {
-        this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+        this.ctx.clearRect(0,0,this.canvas.width ,this.canvas.height);
+        this.trash.update();
         this.dechets.update();
     }
 

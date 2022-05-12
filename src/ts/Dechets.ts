@@ -12,7 +12,6 @@ export class Dechets {
     Alive: boolean;
     private choice: number;
 
-
     protected banane: HTMLImageElement;
     protected bouteille: HTMLImageElement;
     protected verre: HTMLImageElement;
@@ -23,6 +22,7 @@ export class Dechets {
     protected yogurt: HTMLImageElement;
     protected sheet: HTMLImageElement;
     protected apple: HTMLImageElement;
+    private arrayTrash: any[];
 
 
     constructor(htmlCanvasElement: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
@@ -31,11 +31,11 @@ export class Dechets {
 
         this.speed = {y: settings.dechet.speed.y};
         this.position = {
-            x: Math.trunc(random(settings.dechet.position.x, this.htmlCanvasElement.width)),
+            x: random(settings.dechet.position.x, this.htmlCanvasElement.width),
             y: settings.dechet.position.y
         };
         this.Alive = true;
-        this.choice = Math.trunc(Math.random() * 10);
+        this.choice = Math.trunc(Math.random() * 9);
 
 
         //banane
@@ -57,7 +57,7 @@ export class Dechets {
         this.canette.onload = function () {
             main.update();
         };
-        this.bouteille.src = './src/img/can.png';
+        this.canette.src = './src/img/can.png';
 
         //oeuf
         this.oeuf = new Image();
@@ -100,55 +100,46 @@ export class Dechets {
             main.update();
         };
         this.apple.src = './src/img/core.png';
+
+        this.arrayTrash = [this.banane, this.apple, this.bouteille, this.canette, this.oeuf, this.cotton, this.box, this.yogurt, this.sheet];
+
     }
 
     update() {
 
         if (this.position.y < this.htmlCanvasElement.height - 100) {
             this.position.y++;
-        } else {
-            this.position.y = 0;
 
+        } else {
+            this.position.y = -400;
+            this.choose();
         }
+        if(this.position.x> 0 && this.position.x < this.htmlCanvasElement.width -100){
+            this.addEventListeners();
+        }
+
         this.draw();
 
     }
 
     choose(){
-        switch (Math.trunc(random(1,10))) {
-            case 0 : this.ctx.drawImage(this.apple, this.position.x, this.position.y, 100, 100);
-                break;
+        this.choice = Math.trunc(random(1,9));
+        this.position.x = Math.trunc(random(0, this.htmlCanvasElement.width - 100))
+    }
 
-            case 1:  this.ctx.drawImage(this.box, this.position.x, this.position.y, 100, 100);
-                break;
+    draw() {
+    this.ctx.drawImage(this.arrayTrash[this.choice], this.position.x, this.position.y, 100, 100)
 
-            case 2: this.ctx.drawImage(this.yogurt, this.position.x, this.position.y, 100, 100);
-                break;
+    }
 
-            case 3: this.ctx.drawImage(this.canette, this.position.x, this.position.y, 100, 100);
-                break;
+    addEventListeners(){
+        window.addEventListener('keydown', (e)=>{
+            if(e.keyCode === 39){
+                this.position.x +1;
+            } else if(e.keyCode === 37){
+                this.position.x -1;
+            }
+        })
+    }
 
-            case 4: this.ctx.drawImage(this.sheet, this.position.x, this.position.y, 100, 100);
-                break;
-
-            case 5: this.ctx.drawImage(this.cotton, this.position.x, this.position.y, 100, 100);
-                break;
-
-            case 6: this.ctx.drawImage(this.oeuf, this.position.x, this.position.y, 100, 100);
-                break;
-
-            case 7: this.ctx.drawImage(this.apple, this.position.x, this.position.y, 100, 100);
-                break;
-
-            case 8 : this.ctx.drawImage(this.box, this.position.x, this.position.y, 100, 100);
-                break;
-        }
-}
-
-draw()
-{
-    this.ctx.drawImage(this.apple, this.position.x, this.position.y, 100, 100);
-
-
-}
 }

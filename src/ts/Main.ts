@@ -14,7 +14,7 @@ export const main = {
         this.htmlCanvasElement = document.getElementById('my-canvas');
         this.ctx = this.htmlCanvasElement.getContext('2d');
 
-
+        
         this.animation = new Animate(this.ctx, this.htmlCanvasElement, this.dechets);
         this.addEventListeners();
        this.animation.start();
@@ -27,8 +27,10 @@ export const main = {
     },
 
     draw(){
-        this.dechets = new Dechets(this.canvas, this.ctx);
+
         this.trash.draw();
+        this.dechets = new Dechets(this.canvas, this.ctx);
+
         },
 
     addEventListeners() {
